@@ -16,6 +16,7 @@ namespace EM
 
         public DepartmentData DepData;
         public Operation OperationPanel;
+        public Search SearchPanel;
         public Main()
         {
             InitializeComponent();
@@ -30,6 +31,7 @@ namespace EM
         {
             DepData = new DepartmentData();
             OperationPanel = new Operation();
+            SearchPanel = new Search();
 
         }
 
@@ -42,9 +44,23 @@ namespace EM
 
         private void groupToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //OperationPanel.Show();
+            //DataGB.Controls.Clear();
+            //DataGB.Controls.Add(OperationPanel);
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             OperationPanel.Show();
             DataGB.Controls.Clear();
             DataGB.Controls.Add(OperationPanel);
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchPanel.Show();
+            DataGB.Controls.Clear();
+            DataGB.Controls.Add(SearchPanel);
         }
 
         //private void button1_Click(object sender, EventArgs e)

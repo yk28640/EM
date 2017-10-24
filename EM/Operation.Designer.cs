@@ -57,6 +57,8 @@
             this.textBoxWeb = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxMobilePhone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // AddButton
@@ -320,16 +322,36 @@
             // 
             // textBoxDescription
             // 
+            this.textBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDescription.Location = new System.Drawing.Point(102, 446);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(328, 66);
             this.textBoxDescription.TabIndex = 34;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 308);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 12);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "MobilePhone NO.";
+            // 
+            // textBoxMobilePhone
+            // 
+            this.textBoxMobilePhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMobilePhone.Location = new System.Drawing.Point(101, 300);
+            this.textBoxMobilePhone.Name = "textBoxMobilePhone";
+            this.textBoxMobilePhone.Size = new System.Drawing.Size(329, 21);
+            this.textBoxMobilePhone.TabIndex = 35;
+            // 
             // Operation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBoxMobilePhone);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label4);
@@ -398,5 +420,7 @@
         private System.Windows.Forms.TextBox textBoxWeb;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxMobilePhone;
     }
 }

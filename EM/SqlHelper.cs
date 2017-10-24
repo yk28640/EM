@@ -10,8 +10,8 @@ namespace EM
 {
     public static class SqlHelper
     {
-        public static readonly string Constr = ConfigurationManager.ConnectionStrings["mssqlserver"].ConnectionString;
-       // public static readonly string Constr = ConfigurationManager.ConnectionStrings["connection2"].ConnectionString;
+       // public static readonly string Constr = ConfigurationManager.ConnectionStrings["mssqlserver"].ConnectionString;
+        public static readonly string Constr = ConfigurationManager.ConnectionStrings["connection2"].ConnectionString;
 
         public static int ExcuteNonQuery(string sql, params SqlParameter[] pms)  //for insert delete update
         {

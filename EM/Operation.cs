@@ -196,10 +196,11 @@ namespace EM
                     #region FillContacts
                     if (textBoxDescription.Text.Trim().Length+ textBoxPhoneNumber.Text.Trim().Length+textBoxEmail.Text.Trim().Length+ textBoxWeb.Text.Trim().Length+ textBoxFax.Text.Trim().Length>0)
                     {
-                        string sqlContact = "insert into Contacts_Co(Descriptions,PhoneNumber,Email,Web_Address,Fax) values(@Descriptions,@PhoneNumber,@Email,@Web_Address,@Fax)";
+                        string sqlContact = "insert into Contacts_Co(Descriptions,MobilePhone,PhoneNumber,Email,Web_Address,Fax) values(@Descriptions,@MobilePhone,@PhoneNumber,@Email,@Web_Address,@Fax)";
                         SqlParameter[] paraContacts = new SqlParameter[]
                         {
                         new SqlParameter("@Descriptions",SqlDbType.VarChar,8000) {Value=textBoxDescription.Text.Trim()==""?DBNull.Value:(object)textBoxDescription.Text.Trim() },
+                        new SqlParameter("@MobilePhone",SqlDbType.VarChar,20) {Value=textBoxMobilePhone.Text.Trim()==""?DBNull.Value:(object)textBoxMobilePhone.Text.Trim() },
                         new SqlParameter("@PhoneNumber",SqlDbType.VarChar,20) {Value=textBoxPhoneNumber.Text.Trim()==""?DBNull.Value:(object)textBoxPhoneNumber.Text.Trim() },
                         new SqlParameter("@Email",SqlDbType.VarChar,20) {Value=textBoxEmail.Text.Trim()==""?DBNull.Value:(object)textBoxEmail.Text.Trim() },
                         new SqlParameter("@Web_Address",SqlDbType.VarChar,20) {Value=textBoxWeb.Text.Trim()==""?DBNull.Value:(object)textBoxWeb.Text.Trim() },
