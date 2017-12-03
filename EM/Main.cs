@@ -8,15 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using EM.AreaMachineAdd;
 namespace EM
 {
     public partial class Main : Form
     {
-
+      //  public Add AreaMachinePanel;
         public DepartmentData DepData;
         public Operation OperationPanel;
         public Search SearchPanel;
+        public AreaOverview AreaOverviewPanel;
+
         public Main()
         {
             InitializeComponent();
@@ -32,6 +34,8 @@ namespace EM
             DepData = new DepartmentData();
             OperationPanel = new Operation();
             SearchPanel = new Search();
+            AreaOverviewPanel = new AreaOverview();
+          //  AreaMachinePanel = new Add();
 
         }
 
@@ -61,6 +65,28 @@ namespace EM
             SearchPanel.Show();
             DataGB.Controls.Clear();
             DataGB.Controls.Add(SearchPanel);
+        }
+
+        //private void skillToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void areaOverviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AreaOverviewPanel.Show();
+            DataGB.Controls.Clear();
+            DataGB.Controls.Add(AreaOverviewPanel);
+        }
+
+        private void addToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //   AreaMachinePanel.Show();
+            
+            Add AreaMachineAddPanel = new Add();
+            AreaMachineAddPanel.Show();
+            DataGB.Controls.Clear();
+            DataGB.Controls.Add(AreaMachineAddPanel);
         }
 
         //private void button1_Click(object sender, EventArgs e)

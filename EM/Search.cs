@@ -13,6 +13,7 @@ namespace EM
 {
     public partial class Search : UserControl
     {
+        string PersonAutoID=null,Level=null,Phone=null,MobilePhone=null,Email=null;
         public Search()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace EM
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             List<PersonInfo> PersonInfoList = new List<PersonInfo>();
             string sqlLevel = @"select Person_P.AutoID,L.NameBBAC,Person_P.BAIC,Person_P.BBAC,Person_P.Daimler,Person_P.Supplier from Person_P 
@@ -244,6 +245,47 @@ namespace EM
 
 
             dataGridView1.DataSource = PersonInfoList;
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.RowCount>0)
+            {
+                if (PersonAutoID != null)
+                {
+                    update updatefm = update.GetSingle();
+                    if (!updatefm.IsDisposed)
+                    {
+                        updatefm.PersonAutoID = PersonAutoID;  //传递值给update窗口
+                        updatefm.Level = Level;
+                        updatefm.Phone = Phone;
+                        updatefm.MobilePhone = MobilePhone;
+                        updatefm.Email = Email;
+                        updatefm.StartPosition = FormStartPosition.CenterScreen;
+                        updatefm.Show();
+                        updatefm.MyEvent += button1_Click;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("no row selected");
+                }
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowindex = e.RowIndex;
+            if (rowindex >= 0)
+            {
+                PersonAutoID = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
+                Level = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
+                Phone= dataGridView1.Rows[rowindex].Cells[5].Value==null?DBNull.Value.ToString():dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
+                MobilePhone = dataGridView1.Rows[rowindex].Cells[6].Value==null?DBNull.Value.ToString() :dataGridView1.Rows[rowindex].Cells[6].Value.ToString();
+                Email = dataGridView1.Rows[rowindex].Cells[7].Value == null ? DBNull.Value.ToString(): dataGridView1.Rows[rowindex].Cells[7].Value.ToString();
+            }
+           // MessageBox.Show(value);
         }
 
         

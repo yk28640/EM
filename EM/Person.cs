@@ -19,5 +19,7 @@ namespace EM
         public bool Supplier { set; get; }
         public int L_ID { set; get; }
 
+         
+
     }
 }

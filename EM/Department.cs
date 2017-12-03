@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EM
+namespace EM 
 {
-    class Department
+    class Department:Isome
     {
         public string Name { set; get; }
         public string ShortName { set; get; }
